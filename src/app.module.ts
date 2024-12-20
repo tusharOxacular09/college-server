@@ -10,16 +10,19 @@ import { EntityNotFoundExceptionFilter } from './validators/entity_not_found.val
 
 @Module({
   imports: [
+    // Configuring TypeORM with database connection settings
     TypeOrmModule.forRoot(configService.getTypeOrmConfig()),
+    // Importing AuthModule for handling authentication-related routes and logic
     AuthModule,
+    // Importing CollegeModule to manage college-related services and routes
     CollegeModule,
   ],
-  controllers: [AppController],
+  controllers: [AppController], // Registering the main application controller
   providers: [
-    AppService,
+    AppService, // Providing the AppService for application logic
     {
       provide: APP_FILTER,
-      useClass: EntityNotFoundExceptionFilter,
+      useClass: EntityNotFoundExceptionFilter, // Global filter to handle entity not found errors
     },
   ],
 })
