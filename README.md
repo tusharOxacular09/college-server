@@ -31,22 +31,22 @@ This project is hosted on **Render**.
 - **Performance Optimized**: Built to handle large datasets efficiently, making it suitable for a real-world college management system with thousands of records.
 - **Scalable**: The modular design allows for easy addition of new features or expansion into different domains (e.g., student management or event scheduling).
 
-## Installation Instructions
+# Installation Instructions
 
-# Prerequisites
+## Prerequisites
 
 1. Install Node.js (v18 or higher)
 
-- Download from: https://nodejs.org/
-- Verify installation by running: npm -v
+   - Download from: https://nodejs.org/
+   - Verify installation by running: npm -v
 
 2. Install PostgreSQL
 
-- Download from: https://www.postgresql.org/download/
+   - Download from: https://www.postgresql.org/download/
 
 3. Install NestJS CLI globally
 
-- npm i -g @nestjs/cli
+   - npm i -g @nestjs/cli
 
 ## Project Setup
 
