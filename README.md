@@ -20,28 +20,59 @@ This project is hosted on **Render**.
 - **API base URL**: [https://oxacular-college-server.onrender.com/api](https://oxacular-college-server.onrender.com/api)
 - **Swagger Documentation URL**: [https://oxacular-college-server.onrender.com/documentation](https://oxacular-college-server.onrender.com/documentation)
 
+## Features
+
+- **Modular Architecture**: The project follows a modular structure, making it easy to scale and manage different features (like colleges, courses, placements) separately.
+- **Secure Authentication**: Implements **JWT-based authentication** to ensure secure login and user access management.
+- **Efficient Database Management**: Uses **PostgreSQL** for efficient handling of large datasets and ensures quick access to the college and placement data.
+- **API Documentation with Swagger**: The project comes with built-in **Swagger documentation** for easy testing and understanding of the API endpoints.
+- **Error Handling and Validation**: Built-in error handling and input validation to prevent common errors and ensure data consistency.
+- **Extensibility**: Easily extendable to add new features like additional filters, new data models, or even new authentication mechanisms.
+- **Performance Optimized**: Built to handle large datasets efficiently, making it suitable for a real-world college management system with thousands of records.
+- **Scalable**: The modular design allows for easy addition of new features or expansion into different domains (e.g., student management or event scheduling).
+
 ## Installation Instructions
 
+# Prerequisites
+
+1. Install Node.js (v18 or higher)
+
+- Download from: https://nodejs.org/
+- Verify installation by running: npm -v
+
+2. Install PostgreSQL
+
+- Download from: https://www.postgresql.org/download/
+
+3. Install NestJS CLI globally
+
+- npm i -g @nestjs/cli
+
+## Project Setup
+
 1. Clone the repository:
-   git clone git@github.com:tusharOxacular09/college-server.git
-   cd college-server
+
+   - git clone git@github.com:tusharOxacular09/college-server.git
+   - cd college-server
 
 2. Install dependencies:
-   npm install
+
+   - npm install
 
 3. Create a .env file and add the following environment variables:
-   PORT=3000
-   MODE=DEV
-   JWT_SECRET_KEY=your_jwt_secret_key
-   POSTGRES_HOST=your_postgres_host
-   POSTGRES_PORT=5432
-   POSTGRES_USER=your_postgres_user
-   POSTGRES_PASSWORD=your_postgres_password
-   POSTGRES_DATABASE=your_postgres_database
-   RUN_MIGRATIONS=true
+
+   - PORT=3000
+   - MODE=DEV
+   - JWT_SECRET_KEY=your_jwt_secret_key
+   - POSTGRES_HOST=your_postgres_host
+   - POSTGRES_PORT=5432
+   - POSTGRES_USER=your_postgres_user
+   - POSTGRES_PASSWORD=your_postgres_password
+   - POSTGRES_DATABASE=your_postgres_database
+   - RUN_MIGRATIONS=true
 
 4. Run the application in development mode:
-   npm run start:dev
+   - npm run start:dev
 
 - The server should now be running at http://localhost:3000.
 
@@ -51,8 +82,6 @@ This project is hosted on **Render**.
 
 - **GET** `/api`
   - Description: Verifies if the server is running.
-
----
 
 ## Authentication
 
@@ -66,8 +95,6 @@ This project is hosted on **Render**.
 - **POST** `/api/auth/login`
   - Description: Logs in an existing user and returns a JWT token.
 
----
-
 ## College Data
 
 ### Average Placement Data
@@ -80,16 +107,12 @@ This project is hosted on **Render**.
 - **GET** `/api/college_data/{college_id}/placement_section`
   - Description: Returns all placement data for a specific college.
 
----
-
 ## College Filters
 
 ### Filter Colleges by City or State
 
 - **GET** `/api/colleges`
   - Description: Filters colleges by city or state.
-
----
 
 ## College Courses
 
@@ -98,13 +121,6 @@ This project is hosted on **Render**.
 - **GET** `/api/college_courses/{college_id}`
   - Description: Returns all courses for a specific college, sorted by course fee in descending order.
 
-Conclusion
+## Conclusion
+
 This project demonstrates how to build a backend API with NestJS, PostgreSQL, and JWT authentication. The application is designed to handle large datasets efficiently, and it provides various filters and calculations for college-related data. The deployment and API documentation are hosted on Render for easy access.
-
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-vbnet
-Copy code
-
-This `README.md` covers everything from setup instructions to API routes and deployment information. You can copy and paste it directly into your project. Let me know if you need any adjustments!
