@@ -1,21 +1,22 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { ENV } from './env.config';
 
-// Configuration service to manage environment-specific settings and database configuration
 class ConfigService {
   // Returns the TypeORM configuration for connecting to PostgreSQL
   public getTypeOrmConfig(): TypeOrmModuleOptions {
     return {
-      type: 'postgres', // Specifies the database type
-      host: ENV.POSTGRES_HOST, // Database host (e.g., localhost or external host)
-      port: parseInt(ENV.POSTGRES_PORT, 10), // Database port, parsed as integer
-      username: ENV.POSTGRES_USER, // Database username
-      password: ENV.POSTGRES_PASSWORD, // Database password
-      database: ENV.POSTGRES_DATABASE, // Database name
+      type: 'postgres',
+      host: ENV.POSTGRES_HOST,
+      port: parseInt(ENV.POSTGRES_PORT, 10),
+      username: ENV.POSTGRES_USER,
+      password: ENV.POSTGRES_PASSWORD,
+      database: ENV.POSTGRES_DATABASE,
       entities: ['dist/**/*.entity.js'], // Path to entity files for TypeORM
       migrationsTableName: 'migration', // Table name for migrations
       migrations: ['dist/migration/*.js'], // Path to migration files
-      ssl: ENV.MODE !== 'DEV', // Enable SSL if not in development mode
+      ssl: {
+        rejectUnauthorized: false, // This will allow connections without certificate validation
+      },
       synchronize: ENV.MODE === 'DEV', // Synchronize database schema in development mode
     };
   }

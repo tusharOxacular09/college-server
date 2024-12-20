@@ -1,6 +1,7 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
 import { ApiTags, ApiOperation } from '@nestjs/swagger';
+import { ENV } from './config/env.config';
 
 @ApiTags('Health Check') // Grouping the health check endpoint in Swagger UI
 @Controller() // Defines the root controller for the application
